@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>독도연구소</title>
+<link rel="stylesheet" href="../../assets/css/common.css">
+<link rel="stylesheet" href="../../assets/css/jquery.fullpage.css">
+<link rel="stylesheet" href="../../assets/css/swiper.min.css">
+<link rel="stylesheet" href="../../assets/css/layout.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="promotion_area">
+        <strong class="promotion_tit">공지관련 팝업창</strong>
+        <div class="promotion_indicator swiper_indicator">
+            <button class="swiper-button-prev" tabindex="0" role="button"><span class="blind">previous</span></button>
+            <button class="swiper-button-next" tabindex="0" role="button"><span class="blind">next</span></button>
+        </div>
+        <div class="promotion-swiper">              
+            <div class="swiper-wrapper">                
+                <div class="swiper-slide">
+                    <a href="javascript:;" class="img_box">
+                        <figure>
+                            <img src="../../assets/images/@promotion02.jpg" alt="메인 배경 이미지1">
+                        </figure>
+                    </a>
+                </div>                   
+                <div class="swiper-slide">
+                    <a href="javascript:;" class="img_box">
+                        <figure>
+                            <img src="../../assets/images/@promotion03.jpg" alt="메인 배경 이미지2">
+                        </figure>
+                    </a>
+                </div>                   
+                <div class="swiper-slide">
+                    <a href="javascript:;" class="img_box">
+                        <figure>
+                            <img src="../../assets/images/@promotion04.jpg" alt="메인 배경 이미지3">
+                        </figure>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <script src="../../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../../assets/js/jquery.fullPage.js"></script>
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-634df524e4d16acb"></script>
+    <script src="../../assets/js/swiper.min.js"></script>
+    <!-- <script src="../../assets/js/common.js"></script> -->
+    <script>
+        // sec01 홍보영역
+        var promotionSwiper = new Swiper('.promotion-swiper', {
+            speed: 400,
+            spaceBetween: 0,
+            navigation: {
+                nextEl: '.promotion_indicator .swiper-button-next',
+                prevEl: '.promotion_indicator .swiper-button-prev',
+            },
+            on: {
+                init : function(){
+                    var thisSlide = $('.promotion-swiper');
+                    thisSlide.find('.swiper-slide').attr("tabindex", -1);
+                    thisSlide.find('.swiper-slide a').attr("tabindex", -1);
+                    thisSlide.find('.swiper-slide-active').attr("tabindex", -1);
+                    thisSlide.find('.swiper-slide-active a').attr("tabindex", 0);
+                },
+                slideChangeTransitionEnd : function(){
+                    var thisSlide = $('.promotion-swiper');
+                    thisSlide.find('.swiper-slide').attr("tabindex", -1);
+                    thisSlide.find('.swiper-slide a').attr("tabindex", -1);
+                    thisSlide.find('.swiper-slide-active').attr("tabindex", -1);
+                    thisSlide.find('.swiper-slide-active a').attr("tabindex", 0);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
